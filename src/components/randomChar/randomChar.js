@@ -34,8 +34,8 @@ export default class RandomChar extends Component {
   }
 
   updateChararcter() {
-    const id = 130000;
-    // const id = Math.floor(Math.random() * 140 + 25); // диапозон 25-140
+    // const id = 130000;
+    const id = Math.floor(Math.random() * 140 + 25); // диапозон 25-140
     this.gotService.getCharacter(id)
       .then(this.onCharLoaded)
       .catch(this.onError);
@@ -69,19 +69,19 @@ const View = ({character}) => {
       <ul className="list-group list-group-flush">
         <li className="list-group-item d-flex justify-content-between">
           <span className="term">Gender </span>
-          <span>{gender}</span>
+          <span>{gender || 'Sorry, no info :('}</span>
         </li>
         <li className="list-group-item d-flex justify-content-between">
           <span className="term">Born </span>
-          <span>{born}</span>
+          <span>{born || 'Sorry, no info :('}</span>
         </li>
         <li className="list-group-item d-flex justify-content-between">
           <span className="term">Died </span>
-          <span>{died}</span>
+          <span>{died || 'Sorry, no info :('}</span>
         </li>
         <li className="list-group-item d-flex justify-content-between">
           <span className="term">Culture </span>
-          <span>{culture}</span>
+          <span>{culture || 'Sorry, no info :('}</span>
         </li>
       </ul>
     </>
